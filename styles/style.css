@@ -6,12 +6,12 @@
 
 html {
   block-size: 100%;
-  background-color: #FFF;
 }
 
 .page {
   inline-size: 1200px;
   block-size: 100%;
+  border: 1px solid transparent;
   margin: auto;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
