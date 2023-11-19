@@ -6,15 +6,15 @@
 
 html {
   block-size: 100%;
+  border: 1px solid transparent;
+  padding-block-start: 1px;
+  overflow: hidden;
 }
 
 .page {
   inline-size: 1200px;
   block-size: 100%;
-  border: 1px solid transparent;
-  padding-block-start: 1px;
   margin: auto;
-  overflow: hidden;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
