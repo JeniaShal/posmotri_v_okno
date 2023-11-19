@@ -6,6 +6,7 @@
 
 html {
   block-size: 100%;
+  background-color: #FFF;
 }
 
 .page {
@@ -42,8 +43,7 @@ ol {
   grid-template-columns: min-content min-content;
   column-gap: 30px;
   padding: 133px 30px 133px 30px;
-  margin-block-start: auto;
-  margin-block-end: auto;
+  margin: auto;
 }
 
 .result {
@@ -52,12 +52,12 @@ ol {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
+  block-size: 100%;
 }
 
 .result__video-container {
-  inline-size: 711px;
-  max-block-size: 386px;
+  min-inline-size: 711px;
+  block-size: 386px;
   position: relative;
 }
 
@@ -112,13 +112,6 @@ ol {
   border-block-end: 1px solid #FFF;
   block-size: fit-content;
   padding: 1px 0 1px 0;
-}
-
-.search-form__textfield:visited {
-  appearance: none;
-  outline: none;
-  border-block-start: 1px solid #FFF;
-  border-block-end: 1px solid #FFF;
 }
 
 .search-form__textfield:hover {
@@ -231,10 +224,10 @@ ol {
   grid-column: 2/3;
   display: flex;
   flex-direction: column;
-  gap: 26px;
 }
 
 .title {
+  display: block;
   color: #FFF;
   font-family: Oswald, sans-serif;
   font-size: 75px;
@@ -242,6 +235,8 @@ ol {
   font-weight: 700;
   line-height: 94%; /* 70.5px */
   text-transform: uppercase;
+  padding: 2px;
+  margin-block-end: 20px;
 }
 
 .content__accent {
