@@ -40,10 +40,11 @@ ol {
 
 .content {
   display: grid;
-  grid-template-columns: min-content min-content;
+  grid-template-columns: min-content 1fr;
   column-gap: 30px;
   padding: 133px 30px 133px 30px;
-  margin: auto;
+  margin-block-start: auto;
+  margin-block-end: auto;
 }
 
 .result {
@@ -89,7 +90,7 @@ ol {
 }
 
 .search-form__fieldset-title {
-  color: #FFF;
+  color: inherit;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   font-style: normal;
@@ -101,15 +102,15 @@ ol {
 .search-form__textfield {
   border: none;
   background-color: transparent; 
-  color: rgba(255, 255, 255, 0.70);
-  font-family: 'Fira Sans Condensed';
+  color: inherit;
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   min-inline-size: 225px; 
-  border-block-start: 1px solid #FFF;
-  border-block-end: 1px solid #FFF;
+  border-block-start: 1px solid currentColor;
+  border-block-end: 1px solid currentColor;
   block-size: fit-content;
   padding: 1px 0 1px 0;
 }
@@ -119,29 +120,32 @@ ol {
   outline: none;
   border-block-start: 1px solid #FFF;
   border-block-end: 1px solid #FFF;
+  text-decoration: none;
 }
 
 .search-form__textfield:active {
   appearance: none;
-  outline: none;
-  border: 1px solid #FFF;
+  outline: 1px solid #FFF;
 }
 
 .search-form__textfield:focus {
+  appearance: none;
   outline: none;
 }
 
 .search-form__label:has(.search-form__textfield:focus-visible) {
-  outline: none;
-  border: 1px solid #FFF;
+  appearance: none;
+  outline: 1px solid #FFF;
   padding: 1px;
 } 
 
-.search-form__label-text:hover {
+.search-form__label:has(.search-form__pseudo-checkbox):hover {
+  appearance: none;
   text-decoration: underline;
 }
 
-.search-form__label-text:active {
+.search-form__label:active {
+  appearance: none;
   text-decoration: none;
 }
 
@@ -156,7 +160,7 @@ ol {
   inline-size: 19px;
   block-size: 19px;
   background-color: transparent;
-  border: 1px solid white;
+  border: 1px solid #FFF;
   margin-inline-end: 5px;
   cursor: pointer;
 }
@@ -168,12 +172,12 @@ ol {
   block-size: 17px;
   margin-inline-end: 15px;
   background-color: #FFF;
-  border: 2px double #1b1919;
+  outline: 2px double #1b1919;
 }
 
 .search-form__label:has(.search-form__checkbox:focus-visible) {
-  outline: none;
-  border: 1px solid #FFF;
+  appearance: none;
+  outline: 1px solid #FFF;
   padding: 1px;
 }
 
@@ -182,11 +186,9 @@ ol {
   -moz-appearance: none;
   appearance: none;
   background-color: transparent;
-  color: #FFF;
-  border: 1px solid #FFF;
+  color: inherit;
+  outline: 1px solid currentColor;
   padding-block-start: 6px;
-  padding-block-end: 6px;
-  color: #FFF;
   text-align: center;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
@@ -198,26 +200,32 @@ ol {
 }
 
 .button:hover {
+  appearance: none;
   text-decoration: underline;
 }
 
 .button:active {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   text-decoration: none;
-  border: 2px double #FFF;
   background-color: #545050;
+  box-shadow: none;
+  border: 1px solid #FFF;
 }
 
 .button:focus {
+  appearance: none;
   outline: none;
 }
 
 .button:focus-visible {
-  outline: none;
-  border: 3px double #FFF;
+  appearance: none;
+  outline: 3px double #FFF;
 }
 
 .search-form__submit-button {
-  min-inline-size: 194px;
+  inline-size: 194px;
 }
 
 .content__details {
@@ -228,7 +236,7 @@ ol {
 
 .title {
   display: block;
-  color: #FFF;
+  color: inherit;
   font-family: Oswald, sans-serif;
   font-size: 75px;
   font-style: normal;
@@ -244,21 +252,52 @@ ol {
 } 
 
 .content__list {
-  max-block-size: 298px;
-  max-inline-size: 100%;
+  inline-size: 399px;
+  block-size: 298px;
   overflow: hidden auto;
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  padding: 2px;
 }
 
 .content__list::-webkit-scrollbar {
   background-color: transparent;
 }
 
+.content__list-item {
+  margin-bottom: 30px;
+}
+
+.content__list-item:last-child {
+  margin-bottom: 0;
+}
+
 .content__card-link {
   text-decoration: none;
+}
+
+.content__card-link_current:active {
+  appearance: none;
+  display: block;
+  background-color: #545050;
+}
+
+.content__card-link_current:hover {
+  appearance: none;
+  text-decoration: underline;
+  color:inherit;
+}
+
+.content__card-link_current:focus {
+  appearance: none;
+  outline: none;
+}
+
+.content__card-link_current:focus-visible {
+  appearance: none;
+  display: block;
+  border: 1px solid #FFF;
 }
 
 .content__video-card {
@@ -266,28 +305,15 @@ ol {
   justify-content: space-between;
 }
 
-.content__video-card:hover {
-  text-decoration: underline;
-  color:#FFF;
-}
-
-.content__video-card:active {
-  background-color: #545050;
-}
-
-.content__video-card:focus {
-  appearance: none;
-  outline: none;
-}
-
-.content__video-card:focus-visible {
-  appearance: none;
-  outline: none;
-  border: 1px solid #FFF;
+.content__video-card-description-container{
+  inline-size: 200px;
 }
 
 .content__video-card-thumbnail {
-  max-width: 194px;
+  inline-size: 194px;
+  block-size: 103px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .content__video-card-title {
@@ -298,9 +324,10 @@ ol {
   font-weight: 700;
   line-height: 100%; /* 30px */
   text-transform: uppercase;
-  padding-block-start: 6px;
+  margin-block-start: 6px;
   margin-block-end: 6px;
 }
+
 
 .content__video-card-description {
   color: #FFF;
@@ -312,7 +339,11 @@ ol {
 }
 
 .more-button {
-  min-inline-size: 399px;
+  inline-size: 393px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 3px;
 }
 
 .visually-hidden {
