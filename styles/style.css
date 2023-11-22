@@ -211,7 +211,7 @@ ol {
   text-decoration: none;
   background-color: #545050;
   box-shadow: none;
-  border: 1px solid #FFF;
+  outline: 1px solid #FFF;
 }
 
 .button:focus {
