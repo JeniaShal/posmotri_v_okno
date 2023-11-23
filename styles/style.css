@@ -187,7 +187,7 @@ ol {
   appearance: none;
   background-color: transparent;
   color: inherit;
-  outline: 1px solid currentColor;
+  border: 1px solid currentColor;
   padding-block-start: 6px;
   text-align: center;
   font-family: 'Fira Sans Condensed', sans-serif;
@@ -277,16 +277,23 @@ ol {
   text-decoration: none;
 }
 
-.content__card-link_current:active {
+.content__card-link:hover {
   appearance: none;
-  display: block;
-  background-color: #545050;
+  text-decoration: underline;
+  color:inherit;
 }
 
 .content__card-link_current:hover {
   appearance: none;
   text-decoration: underline;
   color:inherit;
+}
+
+.content__card-link_current:active {
+  appearance: none;
+  display: block;
+  text-decoration:none;
+  background-color: #545050;
 }
 
 .content__card-link_current:focus {
@@ -343,7 +350,7 @@ ol {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  margin: 3px;
+  margin: 2px;
 }
 
 .visually-hidden {
